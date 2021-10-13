@@ -30,11 +30,14 @@
 </head>
 
 <body>
-    <div id="droppedElement_wrapperTemplate" class="list-group list-group-item list-group-item-action card p-2 mb-2 shadow destination my-handle visually-hidden"></div>
+    <div id="droppedElement_wrapperTemplate"
+        class="list-group list-group-item list-group-item-action card p-2 mb-2 shadow destination my-handle visually-hidden">
+    </div>
 
     <main>
         <aside class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
-            <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom" href="#">
+            <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom"
+                href="#">
                 <span>Banque d'Éléments</span>
             </a>
             <div id="source" class="list-group list-group-flush border-bottom scrollarea source">
@@ -42,8 +45,11 @@
             </div>
         </aside>
 
-        <div id="destination" class="p-5 list-group col card bg-light scrollarea destination">
-            <!-- Will be populated manually, through drag n' dropping -->
+        <div class="p-5 col bg-light scrollarea">
+            <h1>Éléments choisis</h1>
+            <div id="destination" class="list-group p-2 destination" style="min-height: 100%; background-color: #00000011;">
+                <!-- Will be populated manually, through drag n' dropping -->
+            </div>
         </div>
     </main>
 

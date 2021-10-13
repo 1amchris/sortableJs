@@ -22,6 +22,7 @@ const sharedParams = {
     delay: 500, // ms to define when the sorting should start
     delayOnTouchOnly: true, // only delay if user is using touch
     touchStartThreshold: 10, // px, how many pixels the point should move before cancelling a delayed drag event
+    emptyInsertThreshold: 25, // px, distance mouse must be from empty sortable to insert drag element into it
 }
 const sourceParams = {
     group: sourceGroup,
