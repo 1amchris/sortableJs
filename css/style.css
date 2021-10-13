@@ -29,10 +29,6 @@ main {
     overflow-y: auto;
 }
 
-.lh-tight {
-    line-height: 1.25;
-}
-
 .sortable-ghost {
     opacity: 0.5;
 }
