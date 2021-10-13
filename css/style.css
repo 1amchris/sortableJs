@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+  
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;  
+}
+
+.scrollarea {
+    overflow-y: auto;
+}
+
+.lh-tight {
+    line-height: 1.25;
+}
+
+.sortable-ghost {
+    opacity: 0.5;
+}
+
+.my-handle {
+	cursor: move;
+	cursor: -webkit-grabbing;
+}

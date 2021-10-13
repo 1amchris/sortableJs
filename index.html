@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sortable.js example</title>
+    <meta name="description" content="An example using Sortable.js from cdnjs">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src='js/uuid.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"
+        integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https:kit.fontawesome.com/719083451f.js"></script>
+</head>
+
+<body class="bg-light">
+    <div id="droppedElement_wrapperTemplate" class="list-group card p-2 mb-2 shadow destination visually-hidden"></div>
+
+    <main>
+        <aside class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
+            <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+                <span>Banque d'Éléments</span>
+            </a>
+            <div id="source" class="list-group list-group-flush border-bottom scrollarea source">
+                <!-- Will be populated using JS -->
+            </div>
+        </aside>
+
+        <ul id="destination" class="p-3 list-group col card p-2 destination">
+            <!-- Will be populated manually, through drag n' dropping -->
+        </ul>
+    </main>
+
+    <script>
+        // populate source with elements
+        let source = document.querySelector('#source')
+        const values = `one two three four five
+        six seven eight nine ten
+        eleven twelve thirteen
+        fourteen fifteen sixteen
+        eighteen`
+        values.split(" ")
+            .filter(w => w.length > 1)
+            .forEach(value => {
+                source.innerHTML +=
+                    `<div class="list-group-item list-group-item-action py-3 lh-tight d-flex w-100 align-items-center justify-content-between my-handle">
+                    <span class="ignore-elements">Draggable element ${value}</span>
+                    <i class="fas fa-bars ignore-elements"></i>
+                </div>`
+            })
+    </script>
+    <script src="js/sortable-wrapper.js"></script>
+</body>
+
+</html>
