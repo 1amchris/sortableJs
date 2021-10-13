@@ -22,6 +22,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <script src="https:kit.fontawesome.com/719083451f.js"></script>
 </head>
@@ -31,7 +34,7 @@
 
     <main>
         <aside class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
-            <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+            <a class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom" href="#">
                 <span>Banque d'Éléments</span>
             </a>
             <div id="source" class="list-group list-group-flush border-bottom scrollarea source">
@@ -39,9 +42,9 @@
             </div>
         </aside>
 
-        <ul id="destination" class="p-3 list-group col card p-2 destination">
+        <div id="destination" class="p-5 list-group col card scrollarea destination">
             <!-- Will be populated manually, through drag n' dropping -->
-        </ul>
+        </div>
     </main>
 
     <script>

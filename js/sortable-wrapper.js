@@ -16,19 +16,23 @@ const destinationGroup = {
 
 const sharedParams = {
     animation: 150,
-    swapThreshold: 0.75,
-    fallbackOnBody: true,
+    swapThreshold: 0.65,
+    fallbackOnBody: true, // Appends the cloned DOM Element into the Document's body
+    fallbackTolerance: 0, // Specify in pixels how far the mouves should move before it's considered as a drag
+    delay: 500, // ms to define when the sorting should start
+    delayOnTouchOnly: true, // only delay if user is using touch
+    touchStartThreshold: 10, // px, how many pixels the point should move before cancelling a delayed drag event
 }
 const sourceParams = {
-    ...sharedParams,
     group: sourceGroup,
     sort: false,
+    ...sharedParams,
 }
 const destinationParams = {
-    ...sharedParams,
     group: destinationGroup,
     onMove: onMove_DestinationContainer,
     onAdd: onAdd_DestinationContainer,
+    ...sharedParams,
 }
 
 const sortables = []
@@ -40,7 +44,7 @@ const sortables = []
  * @return {Boolean}           The hovered container can be dropped into
  */
 function onMove_DestinationContainer(event) {
-    return event.to.dataset.uuid === null
+    return event.to.dataset.uuid == null
 }
 
 /**
@@ -72,9 +76,9 @@ function onAdd_DestinationContainer(event) {
     }
     sortables.push(
         new Sortable(item.parent().get(0), {
-            ...sharedParams,
             group: destinationGroup,
             onRemove: onRemove_SubContainer,
+            ...sharedParams,
         }),
     )
 }
@@ -87,8 +91,8 @@ const sourceSortable = new Sortable(
 })
 const destinationSortable = new Sortable(
     document.querySelector("#destination"), {
-    ...sharedParams,
     group: destinationGroup,
+    ...sharedParams,
     onMove: onMove_DestinationContainer,
     onAdd: onAdd_DestinationContainer,
 })
